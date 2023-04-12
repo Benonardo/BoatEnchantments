@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "boat-enchantments",
   "version": "${version}",
 
   "name": "Example Mod",
@@ -19,20 +19,22 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "com.benonardo.boatenchantments.BoatEnchantments"
+    ],
+    "mm:early_risers": [
+      "com.benonardo.boatenchantments.EarlyRiser"
+    ],
+    "preLaunch": [
+      "com.llamalad7.mixinextras.MixinExtrasBootstrap::init"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "boat-enchantments.mixins.json"
   ],
-
+  "accessWidener" : "boat-enchantments.accesswidener",
   "depends": {
     "fabricloader": ">=0.14.9",
-    "fabric-api": "*",
     "minecraft": "~1.19",
     "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
